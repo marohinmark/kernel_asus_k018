@@ -1,0 +1,37 @@
+#
+# Sensor driver configuration
+#
+
+config SENSORS_AK09911
+        tristate "AK09911 compass support"
+        default n
+        depends on I2C
+        help
+          If you say yes here you get support for Asahi Kasei's
+          orientation sensor AK09911.
+
+config SENSORS_KXTJ2_FE170CG
+        tristate "KIONIX_ACCEL KXTJ2-1009 g-sensor"
+        default n
+        depends on I2C
+        help
+          If you say yes here you get support for Kionix's
+          digital 3-axis accelerometer KXTJ2-1009.
+
+config SENSORS_TF103_KXTJ2
+        tristate "KIONIX_ACCEL KXTJ2-1009 g-sensor"
+        default n
+        depends on I2C
+        help
+          If you say yes here you get support for Kionix digital 3-axis
+          accelerometer
+
+
+config SENSORS_TF103_AK09911
+        tristate "AK09911 compass support"
+        default n
+        depends on I2C
+        help
+          If you say yes here you get support for Asahi Kasei's
+          orientation sensor AK09911.
+

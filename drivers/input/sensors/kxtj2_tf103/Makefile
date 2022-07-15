@@ -1,0 +1,2 @@
+obj-$(CONFIG_SENSORS_TF103_KXTJ2)  += kxtj2.o
+

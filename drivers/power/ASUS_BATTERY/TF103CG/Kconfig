@@ -1,0 +1,55 @@
+#
+#  Battery driver configuration
+#
+
+if TF103CG
+
+menuconfig TF103CG_BATTERY
+	bool "ME372CL Battery support"
+        default y
+	help
+	  Say Y here. This option doesn't affect the kernel.
+	  If unsure, say Y.
+
+config TF103CG_BATTERY_SMB345
+	tristate "SMB345 battery charger driver"
+	depends on I2C
+        default y
+	help
+	  Say Y to enable support for the SMB345 switching mode based charger
+	  and sysfs. The driver supports controlling charger-enable and
+	  current limiting capabilities.
+
+config TF103CG_PMIC_SNB5072C1
+	bool "PMIC SNB5072C1"
+	depends on TF103CG_BATTERY_SMB345
+	help
+	  Say Y to enable PMIC SNB5072C1 function
+
+config UPI_BATTERY
+	bool "UPI gauge driver"
+	depends on I2C
+        default y
+	help
+	  Say Y to enable it
+
+config SN280X_CHARGER
+	bool "charger driver"
+	depends on I2C
+	help
+	  Say Y to enable it
+
+config EC_POWER
+	bool "asus ec power information driver"
+	depends on EEPROM_PADSTATION
+	help
+	  Say Y to enable it
+
+config TF103CG_BATTERY_BQ27520
+	tristate "BQ27520 battery driver"
+	depends on I2C
+	help
+	  Say Y here to enable support for batteries with BQ27520(I2C) chips.
+
+endif
+
